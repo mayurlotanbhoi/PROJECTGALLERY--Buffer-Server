@@ -20,7 +20,7 @@ mongoose
 app.use(cookiParser());
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["http://localhost:3000","https://mern-project-gallery-app.onrender.com"],
     credentials: true,
   })
 );
