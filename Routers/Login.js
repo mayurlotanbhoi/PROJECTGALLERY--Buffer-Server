@@ -36,26 +36,26 @@ Rout.post("/login", async (req, res, next) => {
       expiresIn: "30d",
     });
 
-    // res
-    //   .status(200)
-    //   .cookie("jwtoken", jsonwebtoken, {
-    //     httpOnly: true,
-    //     expiresIn: "30d",
-    //     path: "/",
-    //     sameSite: true,
-    //     secure: process.env.NODE_ENV === 'production'
-    //   })
-    //   .json({ massege: "Login SuccesFull" });
+    res
+      .status(200)
+      .cookie("jwtoken", jsonwebtoken, {
+        httpOnly: true,
+        expiresIn: "30d",
+        path: "/",
+        sameSite: true,
+        secure: process.env.NODE_ENV === 'production'
+      })
+      .json({ massege: "Login SuccesFull" });
 
 
-     res
-    .cookie("jwtoken", token, {
-      httpOnly: true,
-      expiresIn: "30d",
-      secure: process.env.NODE_ENV === "production",
-    })
-    .status(200)
-    .json({ message: "Logged in successfully 😊 👌" });
+    //  res
+    // .cookie("jwtoken", token, {
+    //   httpOnly: true,
+    //   expiresIn: "30d",
+    //   secure: process.env.NODE_ENV === "production",
+    // })
+    // .status(200)
+    // .json({ message: "Logged in successfully 😊 👌" });
 
       
     next();
