@@ -7,7 +7,8 @@ const mongoose = require("mongoose");
 const app = express();
 const PORT = process.env.PORT || 8000;
 const DB = process.env.DB;
-app.use(express.json({ limit: "50mb" }));
+
+
 mongoose
   .connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
@@ -20,13 +21,16 @@ mongoose
 app.use(cookiParser());
 app.use(
   cors({
-    origin: ["http://localhost:3000","https://mern-project-gallery-app.onrender.com"],
+    origin: ["https://mern-project-gallery-app.onrender.com","http://localhost:3000"],
     credentials: true,
   })
 );
+
+app.use(express.json({ limit: "50mb" }));
+app.use(express.json());
 app.use("/public", express.static("public"));
 
-app.use(express.json());
+
 
 const Register = require("./Routers/Registation");
 const Login = require("./Routers/Login");
