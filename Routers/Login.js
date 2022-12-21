@@ -48,9 +48,10 @@ Rout.post("/login", async (req, res, next) => {
     //   .json({ massege: "Login SuccesFull" });
 
 
-    return res
-    .cookie("access_token", token, {
+     res
+    .cookie("jwtoken", token, {
       httpOnly: true,
+      expiresIn: "30d",
       secure: process.env.NODE_ENV === "production",
     })
     .status(200)
