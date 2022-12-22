@@ -22,7 +22,7 @@ app.use(cookiParser());
 
 app.use(
   cors({
-    origin: ["https://mern-project-gallery-app.onrender.com"],
+    origin: "https://mern-project-gallery-app.onrender.com/#/",
     credentials: true,
   })
 );
