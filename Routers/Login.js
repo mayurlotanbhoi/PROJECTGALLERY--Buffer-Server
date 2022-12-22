@@ -43,6 +43,7 @@ Rout.post("/login", async (req, res, next) => {
         expiresIn: "30d",
         path: "/",
         secure: process.env.NODE_ENV === "production",
+        SameSite:'Strict'
       })
       .json({ massege: "Login SuccesFull" });
 
