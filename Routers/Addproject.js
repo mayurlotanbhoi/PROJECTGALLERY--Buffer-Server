@@ -30,7 +30,7 @@ Rout.post("/projectadd", upload.single("myfile"), async (req, res) => {
 
     const projectItems = { ...projext };
 
-    projectItems.Photo = base64_encode(`./${req.file.path}`);
+    projectItems.Photo = await base64_encode(`./${req.file.path}`);
     projectItems.accessibility = "PRIVET";
 
     fs.unlink(req.file.path, (error) => {

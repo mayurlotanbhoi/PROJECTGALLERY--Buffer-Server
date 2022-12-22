@@ -41,7 +41,7 @@ Rout.post("/register", upload.single("myfile"), async (req, res) => {
     const useInfo = req.body;
 
     // useInfo.Avatar = req.file.path;
-    useInfo.Avatar = base64_encode(`./${req.file.path}`);
+    useInfo.Avatar = await base64_encode(`./${req.file.path}`);
 
     fs.unlink(req.file.path, (error) => {
       if (error) {
