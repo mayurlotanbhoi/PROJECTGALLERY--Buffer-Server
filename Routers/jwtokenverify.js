@@ -4,7 +4,9 @@ async function jwtVerify(req, res, next) {
   // const userEmai = req.body.email;
 
   try {
-    const token = req.cookies.jwtoken;
+    // const token = req.cookies.jwtoken;
+
+    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1heXVybG90YW4yMDBAZ21haWwuY29tIiwiaWF0IjoxNjcxODg0MzgxLCJleHAiOjE2NzQ0NzYzODF9.-Ktm7wug-xBYbWuMTM7xpMnBpVzhzux2_DBsF3Pumw"
 
     // console.log(token);
 
