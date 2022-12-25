@@ -36,6 +36,8 @@ Rout.post("/login", async (req, res, next) => {
       expiresIn: "30d",
     });
 
+    console.log(jsonwebtoken);
+
     res
       .status(200)
       .cookie("jwtoken", jsonwebtoken, {
