@@ -45,7 +45,7 @@ Rout.post("/login", async (req, res, next) => {
         maxAge: 3600, // 1 hour in seconds
         httpOnly: true,
         sameSite: "lax", // optional
-        path: "/", // optional
+      
       })
     )
     .json({ massege: "Login SuccesFull" });
